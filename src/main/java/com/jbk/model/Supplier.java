@@ -13,9 +13,9 @@ public class Supplier {
 	@Pattern(regexp="^[a-zA-Z]+$",message="InvalisSupplierName")
 	private String supplierName;
 	
-	@NotBlank
-	@Size(min=10,max=10)
-	@Pattern(regexp="^[0-9]+$")
+	
+	@Size(min=10,max=10,message="Mobile number should be 10 digit")
+	@Pattern(regexp="^[0-9]+$",message="Invalid MobileNumber")
 	private String supplierMobileNumber;
 	
 	

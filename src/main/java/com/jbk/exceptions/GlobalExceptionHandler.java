@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 	@ExceptionHandler(MethodArgumentNotValidException.class)
+	@ResponseStatus(code=HttpStatus.BAD_REQUEST)
 	public Map<String, Object> MethodArgumentNotValidException(MethodArgumentNotValidException ex) {
+		
 		Map<String,Object> errorMap=new HashMap<>();
 		List<FieldError> fieldErrors=ex.getFieldErrors();
 		for(FieldError fieldError:fieldErrors) {

@@ -8,23 +8,24 @@ import javax.validation.constraints.Size;
 
 public class Address {
 	
-	
+	@Min(1)
+	@Max(4)
 	private long addressId;
 	
 	@NotBlank(message="City Nameshould not be blank")
 	@Pattern(regexp="^[a-zA-Z]+$",message="Invalid City Name")
 	private String city;
 	
-	@NotBlank
-	@Pattern(regexp="^[a-zA-Z]+$")
+	@NotBlank(message="Distict should not be blank")
+	@Pattern(regexp="^[a-zA-Z]+$",message="District Name should be Alphabetical character")
 	private String district;
 	
-	@NotBlank
-	@Pattern(regexp="^[a-zA-Z]+$")
+	@NotBlank(message="Distict should not be blank")
+	@Pattern(regexp="^[a-zA-Z]+$",message="District Name should be Alphabetical character")
 	private String state;
 	
-	@Pattern(regexp="^[0-9]+$")
-	@Size(min=6,max=6)
+	@Pattern(regexp="^[0-9]+$",message="Invalid Pincode")
+	@Size(min=6,max=6,message="PinCode Should be 6 digit")
 	private String pincode;
 	public Address() {
 		super();
