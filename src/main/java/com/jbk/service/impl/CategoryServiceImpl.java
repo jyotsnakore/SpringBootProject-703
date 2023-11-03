@@ -1,5 +1,7 @@
 package com.jbk.service.impl;
 
+
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,38 +13,44 @@ import com.jbk.service.CategoryService;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
-	
+
 	@Autowired
 	private CategoryDao dao;
 
 	@Override
-	public int saveCategory(Category category) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int addCategory(Category category) 
+	{
+		String categoryId = new SimpleDateFormat("yyyyMMddHHmmss").format(new java.util.Date());
+		category.setCategoryId(Long.parseLong(categoryId));
+
+		return dao.addCategory(category);
+
 	}
 
 	@Override
-	public List<Category> deleteCategory(long categoryId) {
-		// TODO Auto-generated method stub
-		return null;
+	public Category getCategoryById(long categoryId) 
+	{
+		
+		return dao.getCategoryById(categoryId);
 	}
 
 	@Override
-	public Category getCategoryById(long categoryId) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Category> getAllCategory() 
+	{
+		return dao.getAllCategory();
 	}
 
 	@Override
-	public List<Category> getAllCategory() {
-		// TODO Auto-generated method stub
-		return null;
+	public Object deleteCategory(long categoryId) 
+	{
+		
+		return dao.deleteCategory(categoryId);
 	}
 
 	@Override
-	public Category updateCategory(Category category) {
-		// TODO Auto-generated method stub
-		return null;
+	public Category updateCategory(Category category) 
+	{
+		return dao.updateCategory(category);
 	}
 
 }
