@@ -24,6 +24,7 @@ public class SupplierController {
 	@PostMapping("/save-supplier")
 	public String saveSupplier(@RequestBody @Valid Supplier supplier) {
 		int status=service.saveSupplier(supplier);
+		System.out.println(1);
 		
 		if(status==1) {
 			return "Supplier Added!!";
