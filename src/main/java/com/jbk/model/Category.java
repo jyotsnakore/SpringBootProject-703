@@ -1,67 +1,104 @@
 package com.jbk.model;
 
-public class Category {
 
-	private long categoryid;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+
+public class Category 
+{
+
+	private long categoryId;
+
+	@NotBlank(message = "categoryName cannot be empty.")
+	@Pattern(regexp = "^[a-zA-Z]+$", message = "categoryName should contains only alphabetic characters.")
 	private String categoryName;
-	private String description;
+
+	@NotBlank(message = "categoryName cannot be empty.")
+	//@Pattern(regexp = "^[a-zA-Z]+$", message = "categoryName should contains only alphabetic characters.")
+	private String discription;
+
+	@Min(value = 0, message = "discount should not be less than 0%.")
+	@Max(value = 50, message = "discount should not be more than 50%.")
 	private int discount;
+
+	@Min(value = 0, message = "gst should not be less than 0%.")
+	@Max(value = 18, message = "gst should not be more than 18%.")
 	private int gst;
+
+	//@Min(value = 0, message = "deliveryCharges should not be less than 0% of product price.")
+	//@Max(value = 10, message = "deliveryCharges should not be more than 10% of product price.")
 	private double deliveryCharges;
-	public Category() {
-		super();
+
+	public Category() 
+	{
 		// TODO Auto-generated constructor stub
 	}
-	public Category(long categoryid, String categoryName, String description, int discount, int gst,
+
+	public Category(long categoryId, String categoryName, String discription, int discount, int gst,
 			double deliveryCharges) {
 		super();
-		this.categoryid = categoryid;
+		this.categoryId = categoryId;
 		this.categoryName = categoryName;
-		this.description = description;
+		this.discription = discription;
 		this.discount = discount;
 		this.gst = gst;
 		this.deliveryCharges = deliveryCharges;
 	}
-	public long getCategoryid() {
-		return categoryid;
+
+	public long getCategoryId() {
+		return categoryId;
 	}
-	public void setCategoryid(long categoryid) {
-		this.categoryid = categoryid;
+
+	public void setCategoryId(long categoryId) {
+		this.categoryId = categoryId;
 	}
+
 	public String getCategoryName() {
 		return categoryName;
 	}
+
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
-	public String getDescription() {
-		return description;
+
+	public String getDiscription() {
+		return discription;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+
+	public void setDiscription(String discription) {
+		this.discription = discription;
 	}
+
 	public int getDiscount() {
 		return discount;
 	}
+
 	public void setDiscount(int discount) {
 		this.discount = discount;
 	}
+
 	public int getGst() {
 		return gst;
 	}
+
 	public void setGst(int gst) {
 		this.gst = gst;
 	}
+
 	public double getDeliveryCharges() {
 		return deliveryCharges;
 	}
+
 	public void setDeliveryCharges(double deliveryCharges) {
 		this.deliveryCharges = deliveryCharges;
 	}
+
 	@Override
 	public String toString() {
-		return "Category [categoryid=" + categoryid + ", categoryName=" + categoryName + ", description=" + description
+		return "Category [categoryId=" + categoryId + ", categoryName=" + categoryName + ", discription=" + discription
 				+ ", discount=" + discount + ", gst=" + gst + ", deliveryCharges=" + deliveryCharges + "]";
 	}
-	
+
 }

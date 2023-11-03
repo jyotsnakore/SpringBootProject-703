@@ -2,94 +2,145 @@ package com.jbk.model;
 
 import java.sql.Date;
 
-public class Product {
-  
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Product 
+{
+
 	private long productId;
 	private String productName;
 	private double productPrice;
 	private int productQty;
-	private String productDescription;
-	private Date mfdate;
-	private Date expdate;
-	private Supplier supplier;
-	private Category category;
-	public Product() {
-		super();
+	private String productDiscription;
+	private Date mfgDate;
+	private Date expDate;
+	private Supplier productSupplier;
+	private Category productCategory;
+	
+	
+	public Product() 
+	{
 		// TODO Auto-generated constructor stub
 	}
-	public Product(long productId, String productName, double productPrice, int productQty, String productDescription,
-			Date mfdate, Date expdate, Supplier supplier, Category category) {
+
+
+	public Product(long productId, String productName, double productPrice, int productQty, String productDiscription,
+			Date mfgDate, Date expDate, Supplier productSupplier, Category productCategory) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
 		this.productPrice = productPrice;
 		this.productQty = productQty;
-		this.productDescription = productDescription;
-		this.mfdate = mfdate;
-		this.expdate = expdate;
-		this.supplier = supplier;
-		this.category = category;
+		this.productDiscription = productDiscription;
+		this.mfgDate = mfgDate;
+		this.expDate = expDate;
+		this.productSupplier = productSupplier;
+		this.productCategory = productCategory;
 	}
+
+
 	public long getProductId() {
 		return productId;
 	}
+
+
 	public void setProductId(long productId) {
 		this.productId = productId;
 	}
+
+
 	public String getProductName() {
 		return productName;
 	}
+
+
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
+
+
 	public double getProductPrice() {
 		return productPrice;
 	}
+
+
 	public void setProductPrice(double productPrice) {
 		this.productPrice = productPrice;
 	}
+
+
 	public int getProductQty() {
 		return productQty;
 	}
+
+
 	public void setProductQty(int productQty) {
 		this.productQty = productQty;
 	}
-	public String getProductDescription() {
-		return productDescription;
+
+
+	public String getProductDiscription() {
+		return productDiscription;
 	}
-	public void setProductDescription(String productDescription) {
-		this.productDescription = productDescription;
+
+
+	public void setProductDiscription(String productDiscription) {
+		this.productDiscription = productDiscription;
 	}
-	public Date getMfdate() {
-		return mfdate;
+
+
+	public Date getMfgDate() {
+		return mfgDate;
 	}
-	public void setMfdate(Date mfdate) {
-		this.mfdate = mfdate;
+
+
+	public void setMfgDate(Date mfgDate) {
+		this.mfgDate = mfgDate;
 	}
-	public Date getExpdate() {
-		return expdate;
+
+
+	public Date getExpDate() {
+		return expDate;
 	}
-	public void setExpdate(Date expdate) {
-		this.expdate = expdate;
+
+
+	public void setExpDate(Date expDate) {
+		this.expDate = expDate;
 	}
-	public Supplier getSupplier() {
-		return supplier;
+
+
+	public Supplier getProductSupplier() {
+		return productSupplier;
 	}
-	public void setSupplier(Supplier supplier) {
-		this.supplier = supplier;
+
+
+	public void setProductSupplier(Supplier productSupplier) {
+		this.productSupplier = productSupplier;
 	}
-	public Category getCategory() {
-		return category;
+
+
+	public Category getProductCategory() {
+		return productCategory;
 	}
-	public void setCategory(Category category) {
-		this.category = category;
+
+
+	public void setProductCategory(Category productCategory) {
+		this.productCategory = productCategory;
 	}
+
+
 	@Override
 	public String toString() {
 		return "Product [productId=" + productId + ", productName=" + productName + ", productPrice=" + productPrice
-				+ ", productQty=" + productQty + ", productDescription=" + productDescription + ", mfdate=" + mfdate
-				+ ", expdate=" + expdate + ", supplier=" + supplier + ", category=" + category + "]";
+				+ ", productQty=" + productQty + ", productDiscription=" + productDiscription + ", mfgDate=" + mfgDate
+				+ ", expDate=" + expDate + ", productSupplier=" + productSupplier + ", productCategory="
+				+ productCategory + "]";
 	}
+
+
 	
 	
+
 }
